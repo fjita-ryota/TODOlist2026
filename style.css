@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Yu Gothic", sans-serif;
+  background: #f4f6fb;
+  color: #263044;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(100% - 32px, 720px);
+  margin: 45px auto;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: #6555d9;
+}
+
+.header p {
+  color: #7d8595;
+  margin-top: 8px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+.summary-card span {
+  display: block;
+  color: #89909f;
+  font-size: 13px;
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 30px;
+  margin-top: 7px;
+}
+
+.panel {
+  background: white;
+  padding: 25px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 19px;
+}
+
+#todo-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dce0e8;
+  border-radius: 9px;
+  outline: none;
+}
+
+#todo-input:focus,
+input:focus,
+select:focus {
+  border-color: #6555d9;
+  outline: 2px solid #6555d922;
+}
+
+.form-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 16px;
+}
+
+.form-options label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: #777f8d;
+}
+
+.form-options input,
+.form-options select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #dce0e8;
+  border-radius: 8px;
+  background: white;
+}
+
+.add-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #6555d9;
+  color: white;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #5141c4;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-header h2 {
+  margin-bottom: 15px;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: #9299a6;
+  font-size: 12px;
+}
+
+.clear-btn:hover {
+  color: #e04d5a;
+}
+
+.filters {
+  display: flex;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  background: #f3f4f8;
+  border: none;
+  border-radius: 8px;
+  color: #7b8291;
+}
+
+.filter-btn.active {
+  background: #eeeaff;
+  color: #6555d9;
+  font-weight: bold;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.todo-checkbox {
+  width: 19px;
+  height: 19px;
+  accent-color: #6555d9;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-title {
+  display: block;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #a2a7b2;
+}
+
+.todo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 7px;
+  font-size: 12px;
+  color: #8a91a0;
+}
+
+.priority {
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.priority.high {
+  background: #ffe7e9;
+  color: #d94758;
+}
+
+.priority.medium {
+  background: #fff3d9;
+  color: #ad7900;
+}
+
+.priority.low {
+  background: #e5f5ec;
+  color: #21844e;
+}
+
+.overdue {
+  color: #d94758;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 7px;
+  background: #f2f3f7;
+  color: #6d7482;
+}
+
+.edit-btn:hover {
+  background: #e8e4ff;
+  color: #6555d9;
+}
+
+.delete-btn:hover {
+  background: #ffe7e9;
+  color: #d94758;
+}
+
+.empty-message {
+  text-align: center;
+  color: #a0a6b1;
+  padding: 35px 0;
+}
+
+footer {
+  text-align: center;
+  color: #a1a7b3;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+@media (max-width: 500px) {
+  .app {
+    margin: 22px auto;
+  }
+
+  .panel {
+    padding: 17px;
+  }
+
+  .summary {
+    gap: 8px;
+  }
+
+  .summary-card {
+    padding: 13px;
+  }
+
+  .summary-card strong {
+    font-size: 24px;
+  }
+
+  .todo-item {
+    gap: 8px;
+  }
+
+  .todo-actions {
+    flex-direction: column;
+  }
+
+  .form-options {
+    gap: 9px;
+  }
+}

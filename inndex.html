@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My TODO | タスク管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="app">
+    <header class="header">
+      <div class="logo">✓ My TODO</div>
+      <p>毎日のタスクを、シンプルに管理しよう。</p>
+    </header>
+
+    <section class="summary">
+      <div class="summary-card">
+        <span>すべて</span>
+        <strong id="total-count">0</strong>
+      </div>
+      <div class="summary-card">
+        <span>未完了</span>
+        <strong id="active-count">0</strong>
+      </div>
+      <div class="summary-card">
+        <span>完了済み</span>
+        <strong id="done-count">0</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>新しいタスク</h2>
+
+      <form id="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="やることを入力..."
+          maxlength="100"
+          required
+        >
+
+        <div class="form-options">
+          <div>
+            <label for="due-date">締切日</label>
+            <input type="date" id="due-date">
+          </div>
+
+          <div>
+            <label for="priority">優先度</label>
+            <select id="priority">
+              <option value="low">低</option>
+              <option value="medium" selected>中</option>
+              <option value="high">高</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="add-btn">
+          ＋ タスクを追加
+        </button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-header">
+        <h2>タスク一覧</h2>
+        <button id="clear-completed" class="clear-btn">
+          完了済みを削除
+        </button>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">
+          すべて
+        </button>
+        <button class="filter-btn" data-filter="active">
+          未完了
+        </button>
+        <button class="filter-btn" data-filter="done">
+          完了済み
+        </button>
+      </div>
+
+      <ul id="todo-list"></ul>
+
+      <p id="empty-message" class="empty-message">
+        タスクはまだありません。
+      </p>
+    </section>
+
+    <footer>
+      My TODO — GitHub Pages対応
+    </footer>
+  </main>
+
+</body>
+</html>
